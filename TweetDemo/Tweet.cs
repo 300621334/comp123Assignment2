@@ -11,7 +11,7 @@ namespace TweetDemo
     {
         //fields
         private static int CURRENT_ID = 100;
-        //PROPERTIES
+        //PROPERTIES - autoimplemented - must have both get & set.
         public string Tag { get; private set; }
         public string From { get; private set; }
         public string To   { get; private set; }
@@ -42,9 +42,11 @@ namespace TweetDemo
     public class TweetManager
     {
         //fields
-        private static string filename = @"C:\Users\a\Google Drive\Semester-2\Comp-123 - Prog 2 - Narendra Pershad\Projects\Assignment_2\TweetDemo\TweetFile.txt";
+        private static string filename = @"C:\Users\a\Google Drive\Semester-2\Comp-123 - Prog 2 - Narendra Pershad\Projects\Assignment_2_Tweets\TweetFile.txt";
         private static List<Tweet> tweets;
 
+        //static constructor cannot be done "new", since no new obj is being created.
+        //static constructor is fired ass soon as we call the CLASS containing it(TweetManager-class) from Main().
         static TweetManager()
         {
             string line="";
